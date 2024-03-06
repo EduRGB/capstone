@@ -1,15 +1,50 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
+
+// Reducer function to update times
+const updateTimesReducer = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_DATE':
+      return { ...state, date: action.payload };
+    case 'UPDATE_TIME':
+      return { ...state, time: action.payload };
+    default:
+      return state;
+  }
+};
+
+// Reducer function to initialize times
+const initializeTimesReducer = (state, action) => {
+  switch (action.type) {
+    case 'INITIALIZE_TIMES':
+      return { date: '', time: '' };
+    default:
+      return state;
+  }
+};
 
 const BookingForm = () => {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [times, updateTimesDispatch] = useReducer(updateTimesReducer, { date: '', time: '' });
+  const [, initializeTimesDispatch] = useReducer(initializeTimesReducer, {});
+
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [occasion, setOccasion] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your logic to handle the form submission here
-    console.log('Reservation submitted:', { date, time, numberOfGuests, occasion });
+    console.log('Reservation submitted:', { date: times.date, time: times.time, numberOfGuests, occasion });
+  };
+
+  const handleDateChange = (e) => {
+    updateTimesDispatch({ type: 'UPDATE_DATE', payload: e.target.value });
+  };
+
+  const handleTimeChange = (e) => {
+    updateTimesDispatch({ type: 'UPDATE_TIME', payload: e.target.value });
+  };
+
+  const handleInitializeTimes = () => {
+    initializeTimesDispatch({ type: 'INITIALIZE_TIMES' });
   };
 
   return (
@@ -19,8 +54,8 @@ const BookingForm = () => {
         <input
           type="date"
           id="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
+          value={times.date}
+          onChange={handleDateChange}
           required
         />
       </div>
@@ -30,8 +65,8 @@ const BookingForm = () => {
         <input
           type="time"
           id="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
+          value={times.time}
+          onChange={handleTimeChange}
           required
         />
       </div>
@@ -62,7 +97,9 @@ const BookingForm = () => {
         </select>
       </div>
 
-      <button type="submit">Submit Reservation</button>
+      <button type="submit" onClick={handleInitializeTimes}>
+        Submit Reservation
+      </button>
     </form>
   );
 };
