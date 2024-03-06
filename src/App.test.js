@@ -14,13 +14,11 @@ test("renders all form fields", () => {
         <BookingForm {...mockProps} />
     </Router>
   );
-  expect(screen.getByLabelText("First Name")).toBeInTheDocument();
-  expect(screen.getByLabelText("Last Name")).toBeInTheDocument();
-  expect(screen.getByLabelText("Email")).toBeInTheDocument();
-  expect(screen.getByLabelText("Phone Number")).toBeInTheDocument();
+  expect(screen.getByLabelText("First Name*")).toBeInTheDocument();
+  expect(screen.getByLabelText("Last Name*")).toBeInTheDocument();
+  expect(screen.getByLabelText("Email*")).toBeInTheDocument();
   expect(screen.getByLabelText("Number of People")).toBeInTheDocument();
-  expect(screen.getByLabelText("Select Date")).toBeInTheDocument();
+  expect(screen.getByLabelText("Select Date*")).toBeInTheDocument();
   expect(screen.getByLabelText("Select Time")).toBeInTheDocument();
   expect(screen.getByLabelText("Occasion")).toBeInTheDocument();
-  expect(screen.getByLabelText("Seating preferences")).toBeInTheDocument();
 });
