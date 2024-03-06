@@ -1,4 +1,14 @@
 import React, { useReducer, useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+const validationSchema = Yup.object().shape({
+  date: Yup.string().required('Date is required'),
+  time: Yup.string().required('Time is required'),
+  numberOfGuests: Yup.number().min(1, 'Number of Guests must be at least 1').required('Number of Guests is required'),
+  occasion: Yup.string().required('Occasion is required').notOneOf([''], 'Please select an Occasion'),
+});
+
 
 // Reducer function to update times
 const updateTimesReducer = (state, action) => {
@@ -23,41 +33,33 @@ const initializeTimesReducer = (state, action) => {
 };
 
 const BookingForm = () => {
-  const [times, updateTimesDispatch] = useReducer(updateTimesReducer, { date: '', time: '' });
-  const [, initializeTimesDispatch] = useReducer(initializeTimesReducer, {});
-
-  const [numberOfGuests, setNumberOfGuests] = useState(1);
-  const [occasion, setOccasion] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your logic to handle the form submission here
-    console.log('Reservation submitted:', { date: times.date, time: times.time, numberOfGuests, occasion });
-  };
-
-  const handleDateChange = (e) => {
-    updateTimesDispatch({ type: 'UPDATE_DATE', payload: e.target.value });
-  };
-
-  const handleTimeChange = (e) => {
-    updateTimesDispatch({ type: 'UPDATE_TIME', payload: e.target.value });
-  };
-
-  const handleInitializeTimes = () => {
-    initializeTimesDispatch({ type: 'INITIALIZE_TIMES' });
-  };
+  const formik = useFormik({
+    initialValues: {
+      date: '',
+      time: '',
+      numberOfGuests: 1,
+      occasion: '',
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      console.log('Reservation submitted:', values);
+    },
+  });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
       <div>
         <label htmlFor="date">Date:</label>
         <input
           type="date"
           id="date"
-          value={times.date}
-          onChange={handleDateChange}
+          name="date"
+          value={formik.values.date}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           required
         />
+        {formik.touched.date && formik.errors.date && <div>{formik.errors.date}</div>}
       </div>
 
       <div>
@@ -65,10 +67,13 @@ const BookingForm = () => {
         <input
           type="time"
           id="time"
-          value={times.time}
-          onChange={handleTimeChange}
+          name="time"
+          value={formik.values.time}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           required
         />
+        {formik.touched.time && formik.errors.time && <div>{formik.errors.time}</div>}
       </div>
 
       <div>
@@ -76,30 +81,34 @@ const BookingForm = () => {
         <input
           type="number"
           id="numberOfGuests"
-          value={numberOfGuests}
-          onChange={(e) => setNumberOfGuests(parseInt(e.target.value, 10))}
+          name="numberOfGuests"
+          value={formik.values.numberOfGuests}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           min="1"
           required
         />
+        {formik.touched.numberOfGuests && formik.errors.numberOfGuests && <div>{formik.errors.numberOfGuests}</div>}
       </div>
 
       <div>
         <label htmlFor="occasion">Occasion:</label>
         <select
           id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
+          name="occasion"
+          value={formik.values.occasion}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           required
         >
           <option value="">Select an Occasion</option>
           <option value="Birthday">Birthday</option>
           <option value="Anniversary">Anniversary</option>
         </select>
+        {formik.touched.occasion && formik.errors.occasion && <div>{formik.errors.occasion}</div>}
       </div>
 
-      <button type="submit" onClick={handleInitializeTimes}>
-        Submit Reservation
-      </button>
+      <button type="submit">Submit Reservation</button>
     </form>
   );
 };
