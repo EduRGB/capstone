@@ -1,9 +1,63 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
 }
 
-.container {
+.app {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-auto-rows: minmax(150px, auto);
+  grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+  min-height: 100vh;
+}
+
+header {
+  grid-row: 1;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+nav {
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+main {
+  grid-row: 2;
+  padding: 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+footer {
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 75% and 25% */
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-left,
+.info-right {
+  max-width: 300px;
 }
