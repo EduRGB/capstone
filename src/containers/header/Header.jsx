@@ -8,8 +8,8 @@ const Header = () => {
     <header className='litlem_header section__padding' id='home'>
       <div className='litlem_header-content'>
         <h1>Little Lemon</h1>
-        <h2 className='header_text-city'>Chicago</h2>
-        <p>We are a family owned Mediterranean restaurant, located on Maldove Street in Chicago, Illinois. We focus on traditional recipes served with a modern twist.</p>
+        <h2 className='header_text-city'>Citrus Grove</h2>
+        <p>Our restaurant in the heart of Citrus Grove, offers a cozy haven where citrus-inspired dishes meet a friendly ambiance, creating a delightful culinary experience with genuine hospitality.</p>
 
         <Link to="/little-lemon-capstone/booking" className='litlem_header-content__button'>
           <button type='button'>Reserve a Table</button>

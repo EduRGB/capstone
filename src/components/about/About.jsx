@@ -9,7 +9,7 @@ export default function About() {
       <section className="about-title">
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
-          <p className="about-description">Little Lemon opened in 1995 by two Italian brothers, Adrian and Mario. Despite the city's diversity, the two brothers recognized the lack of Mediterranean cuisine in Chicago, and were inspired to bring the flavors of their hometown in Italy to the people of Chicago. The two brothers continue to oversee the Little Lemon restaurant, nearly thirty years later.</p>
+          <p className="about-description">Discover Little Lemon, an oasis in Citrus Grove where citrus-infused wonders await. Picture this: Lemon Lullaby Pasta, a dance of noodles in a sunshine-kissed lemon cream sauce, or the Zesty Zephyr Burger, a tantalizing blend of grilled chicken, lemon aioli, and secret citrus spices. Immerse yourself in a lemon-themed haven with whimsical decor, guided by our friendly Lemonites.</p>
       </section>
 
       <section className="stacked-image">

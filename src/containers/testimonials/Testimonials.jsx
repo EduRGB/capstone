@@ -17,7 +17,7 @@ export default function Testimonials() {
           image={TaylorMiller}
           name="Taylor Miller"
           description="Little Lemon's flavors are a taste sensation. Perfect for a cozy meal with friends."
-          rating={4}
+          rating={5}
         />
         <TestimonialsCard
           image={AlexTaylor}
@@ -29,13 +29,13 @@ export default function Testimonials() {
           image={CaseyJordan}
           name="Casey Jordan"
           description="Little Lemon sets the bar high for Mediterranean cuisine. Extraordinary flavors. Highly recommended!"
-          rating={5}
+          rating={4}
         />
         <TestimonialsCard
           image={JordanSmith}
           name="Jordan Smith"
           description="Little Lemon's family-friendly atmosphere and delicious Mediterranean flavors make it a favorite for both adults and kids."
-          rating={3}
+          rating={5}
         />
       </section>
     </section>
