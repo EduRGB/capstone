@@ -1,0 +1,56 @@
+.confirmation-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem 8rem;
+    background-color: #495e57;
+    margin: 8rem;
+    border-radius: 5px;
+  }
+  
+  .confirmation-gif {
+    width: 200px;
+    height: auto;
+    background-color: #00000033;
+    border-radius: 10px;
+  }
+  
+  .reserve-header-text {
+    text-align: center;
+  }
+  
+  .reserve-header-text h1 {
+    font-family: var(--headline-font-family);
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #f4ce14;
+    font-weight: 800;
+  }
+  
+  .reserve-header-text h4 {
+    font-family: var(--paragraph-font-family);
+    font-size: 18px;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+@media screen and (max-width: 1165px) {
+    .confirmation-header {    
+        padding: 4rem 4rem;
+      }
+}
+
+@media screen and (max-width: 700px) {
+    .confirmation-header {    
+        padding: 4rem 4rem;
+        margin: 4rem;
+      }
+}
+
+@media screen and (max-width: 550px) {
+    .confirmation-header {    
+        padding: 2rem 2rem;
+        margin: 2rem;
+      }
+}

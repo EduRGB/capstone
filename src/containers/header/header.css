@@ -1,0 +1,142 @@
+.litlem_header {
+    background-color: #495e57;
+    display: flex;
+}  
+
+.litlem_header-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 5rem;
+}
+
+.litlem_header-content h1 {
+    color: #fff;
+    font-family: var(--headline-font-family);
+    font-size: 62px;
+    font-weight: 500;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0rem;
+    margin-bottom: -1.5rem;
+}
+
+.header_text-city {
+    color: #fff;
+    font-family: var(--headline-font-family);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.litlem_header-content p {
+    color: #fff;
+    font-family: Karla;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.litlem_header-content__button button {
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem;
+    color: #000;
+    background-color: #F4ce14;
+    font-family: var(--paragraph-font-family);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 15px 32px;
+    border-radius: 3px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+  }
+
+.litlem_header-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.litlem_header-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1165px) {
+    .litlem_header {
+        flex-direction: column;
+    }
+
+    .litlem_header-content {
+        margin: 0 0 3rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .litlem_header-content {
+        margin: 0;
+    }
+
+    .litlem_header h1 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .litlem_header p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .litlem_header-content p {
+        margin: 0;
+    }
+
+    .litlem_header-content__button {
+        width: 100%;
+      }
+
+    .litlem_header-content__button button {
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    
+@media screen and (max-width: 550px) {
+    .litlem_header h1 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .litlem_header p{
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .litlem_header-content__button button {
+        font-size: 12px;
+        line-height: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+}

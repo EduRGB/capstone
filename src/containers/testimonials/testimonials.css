@@ -1,0 +1,116 @@
+.testimonials {
+    padding: 2rem 8rem;
+    animation-duration: 0.33s;
+    animation-timing-function: ease-in-out;
+    animation-name: slideDownFade;
+  }
+
+  .testimonials-topbar {
+    font-size: 1.5rem;
+    padding-bottom: .5rem;
+  }
+
+  .testimonialsMain-card {
+    display: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .testimonials-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    align-items: top;
+  }
+
+  .testimonialsMain-card-content {
+    flex-direction: column;
+    margin: 1rem 1rem 1rem 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    
+  }
+
+  .testimonialsMain-card-content h1 {
+    font-size: 1.3rem;
+    padding-bottom: .5rem;
+  }
+  
+  .testimonialsMain-card-content p {
+    font-size: 1rem;
+  }
+  
+  .testimonial-card {
+    background-color: #edefee;
+    padding: 1rem 1rem 0 1rem;
+  }
+  
+  .testimonial-card > img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+  
+  .testimonials-carousel {
+    display: none;
+  }
+
+  .name-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-name-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .testimonial-image {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  
+  .rating {
+    display: flex;
+    margin-top: -10px;
+  }
+  
+  .rating img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .testimonial-description {
+    margin-top: 10px;
+  }
+
+@media screen and (max-width: 1165px) {
+  .testimonials-cards {
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .testimonials {
+    padding: 2rem 4rem;
+  }
+
+  .testimonials-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .testimonials {
+    padding: 1rem 2rem;
+  }
+}
