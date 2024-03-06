@@ -3,7 +3,8 @@ import React from 'react';
 const Navigation = () => {
   return (
     <nav>
-      {/* Your navigation content goes here */}
+      {/* Add your navigation content, possibly an icon */}
+      <div>Navigation Icon</div>
     </nav>
   );
 }
