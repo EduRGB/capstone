@@ -86,7 +86,7 @@ export default function ReservationForm() {
   return (
     <form className="reservation-form" onSubmit={handleSubmit} noValidate>
       <div>
-        <label htmlFor="fName">First Name</label> <br />
+        <label htmlFor="fName">First Name*</label> <br />
         <input
           type="text"
           id="fName"
@@ -98,7 +98,7 @@ export default function ReservationForm() {
       </div>
 
       <div>
-        <label htmlFor="lName">Last Name</label> <br />
+        <label htmlFor="lName">Last Name*</label> <br />
         <input
           type="text"
           id="lName"
@@ -110,7 +110,7 @@ export default function ReservationForm() {
       </div>
 
       <div>
-        <label htmlFor="email">Email</label> <br />
+        <label htmlFor="email">Email*</label> <br />
         <input
           type="email"
           id="email"
@@ -133,7 +133,7 @@ export default function ReservationForm() {
       </div>
 
       <div>
-        <label htmlFor="date">Select Date</label> <br />
+        <label htmlFor="date">Select Date*</label> <br />
         <input
           type="date"
           id="date"
